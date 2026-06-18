@@ -50,18 +50,18 @@ export default function Dialog({
           </button>
         </div>
 
-        {/* Body — two columns */}
-        <div className="flex-1 overflow-hidden flex min-h-0">
+        {/* Body — two columns on md+, stacked on mobile */}
+        <div className="flex-1 overflow-y-auto md:overflow-hidden flex flex-col md:flex-row min-h-0">
           {/* Left: Shared */}
-          <div className="w-72 flex-shrink-0 border-r border-gray-100 overflow-y-auto p-6 space-y-4 bg-gray-50/50">
+          <div className="w-full md:w-72 md:flex-shrink-0 border-b md:border-b-0 md:border-r border-gray-100 md:overflow-y-auto p-6 space-y-4 bg-gray-50/50">
             <p className="text-[10px] font-bold text-gray-400 uppercase tracking-widest">Data Umum</p>
             {sharedContent}
           </div>
 
           {/* Right: Bilingual */}
-          <div className="flex-1 overflow-y-auto flex flex-col min-h-0">
+          <div className="flex-1 md:overflow-y-auto flex flex-col min-h-0">
             {/* Lang tab sticky */}
-            <div className="flex items-center justify-between px-6 py-3 border-b border-gray-100 bg-white flex-shrink-0 sticky top-0 z-10">
+            <div className="flex items-center justify-between px-6 py-3 border-b border-gray-100 bg-white flex-shrink-0 md:sticky top-0 z-10">
               <p className="text-[10px] font-bold text-gray-400 uppercase tracking-widest">Konten Terjemahan</p>
               <LangTabs lang={lang} onChange={onLangChange} />
             </div>
