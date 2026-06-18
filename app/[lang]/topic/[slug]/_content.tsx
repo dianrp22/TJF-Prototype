@@ -35,7 +35,6 @@ interface Props {
   relatedInitiatives: any[];
   otherTopics: any[];
   lang: string;
-  lp: (path: string) => string;
   ui: {
     back: string;
     all: string;
@@ -56,7 +55,8 @@ interface Props {
   };
 }
 
-export default function TopicDetailContent({ displayPubs, displayNews, relatedResearch, relatedInitiatives, otherTopics, lang, lp, ui }: Props) {
+export default function TopicDetailContent({ displayPubs, displayNews, relatedResearch, relatedInitiatives, otherTopics, lang, ui }: Props) {
+  const lp = (path: string) => lang === "en" ? path : `/${lang}${path}`;
   const [activeTab, setActiveTab] = useState<Tab>("all");
 
   const tabs: { key: Tab; label: string; count: number }[] = [

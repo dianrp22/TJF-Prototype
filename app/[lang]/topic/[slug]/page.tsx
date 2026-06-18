@@ -107,7 +107,6 @@ export default function TopicDetailPage({ params }: Props) {
         relatedInitiatives={relatedInitiatives as any[]}
         otherTopics={otherTopics as any[]}
         lang={lang}
-        lp={lp}
         ui={ui}
       />
     </div>
