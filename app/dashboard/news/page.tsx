@@ -86,12 +86,16 @@ export default function NewsPage() {
 
       {/* Table */}
       <div className="bg-white rounded-2xl border border-gray-200 overflow-hidden">
-        <table className="w-full text-sm">
+        <div className="overflow-x-auto">
+        <table className="w-full text-sm min-w-[500px]">
           <thead className="bg-gray-50 border-b border-gray-100">
             <tr>
-              {["","Judul (ID)","Judul (EN)","Kategori","Tanggal",""].map((h,i) => (
-                <th key={i} className="text-left px-4 py-3 text-[11px] font-bold text-gray-400 uppercase tracking-wide">{h}</th>
-              ))}
+              <th className="text-left px-4 py-3 text-[11px] font-bold text-gray-400 uppercase tracking-wide"></th>
+              <th className="text-left px-4 py-3 text-[11px] font-bold text-gray-400 uppercase tracking-wide">Judul (ID)</th>
+              <th className="text-left px-4 py-3 text-[11px] font-bold text-gray-400 uppercase tracking-wide hidden sm:table-cell">Judul (EN)</th>
+              <th className="text-left px-4 py-3 text-[11px] font-bold text-gray-400 uppercase tracking-wide hidden sm:table-cell">Kategori</th>
+              <th className="text-left px-4 py-3 text-[11px] font-bold text-gray-400 uppercase tracking-wide hidden md:table-cell">Tanggal</th>
+              <th className="text-left px-4 py-3 text-[11px] font-bold text-gray-400 uppercase tracking-wide"></th>
             </tr>
           </thead>
           <tbody className="divide-y divide-gray-50">
@@ -108,13 +112,13 @@ export default function NewsPage() {
                     <p className="font-semibold text-gray-900 truncate">{item.title}</p>
                     <p className="text-xs text-gray-400 font-mono truncate mt-0.5">{item.slug}</p>
                   </td>
-                  <td className="px-4 py-3 max-w-[200px]">
+                  <td className="px-4 py-3 max-w-[200px] hidden sm:table-cell">
                     <p className="text-gray-600 truncate text-xs">{(en as any)?.title || <span className="text-gray-300 italic">—</span>}</p>
                   </td>
-                  <td className="px-4 py-3">
+                  <td className="px-4 py-3 hidden sm:table-cell">
                     <span className={`px-2 py-0.5 text-[10px] font-bold rounded-full ${catBadge[item.category]??"bg-gray-100 text-gray-500"}`}>{item.category}</span>
                   </td>
-                  <td className="px-4 py-3 text-xs text-gray-400 whitespace-nowrap">{item.date}</td>
+                  <td className="px-4 py-3 text-xs text-gray-400 whitespace-nowrap hidden md:table-cell">{item.date}</td>
                   <td className="px-4 py-3">
                     <div className="flex gap-1 justify-end">
                       <button onClick={()=>openEdit(item)} className="w-7 h-7 flex items-center justify-center rounded-lg hover:bg-blue-50 text-gray-400 hover:text-blue-600 transition-colors"><Pencil className="w-3.5 h-3.5"/></button>
@@ -126,6 +130,7 @@ export default function NewsPage() {
             })}
           </tbody>
         </table>
+        </div>
         {filtered.length===0 && <p className="text-center py-12 text-gray-400 text-sm">Tidak ada data</p>}
       </div>
 

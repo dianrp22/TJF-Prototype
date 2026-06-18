@@ -56,9 +56,17 @@ export default function StoriesPage() {
         <input value={q} onChange={e=>setQ(e.target.value)} placeholder="Cari..." className="w-full pl-9 pr-3 py-2 text-sm border border-gray-200 rounded-xl bg-white focus:outline-none focus:ring-2 focus:ring-violet-500"/>
       </div>
       <div className="bg-white rounded-2xl border border-gray-200 overflow-hidden">
-        <table className="w-full text-sm">
+        <div className="overflow-x-auto">
+        <table className="w-full text-sm min-w-[500px]">
           <thead className="bg-gray-50 border-b border-gray-100">
-            <tr>{["","Judul (ID)","Judul (EN)","Inisiatif","Lokasi",""].map((h,i)=><th key={i} className="text-left px-4 py-3 text-[11px] font-bold text-gray-400 uppercase tracking-wide">{h}</th>)}</tr>
+            <tr>
+              <th className="text-left px-4 py-3 text-[11px] font-bold text-gray-400 uppercase tracking-wide"></th>
+              <th className="text-left px-4 py-3 text-[11px] font-bold text-gray-400 uppercase tracking-wide">Judul (ID)</th>
+              <th className="text-left px-4 py-3 text-[11px] font-bold text-gray-400 uppercase tracking-wide hidden sm:table-cell">Judul (EN)</th>
+              <th className="text-left px-4 py-3 text-[11px] font-bold text-gray-400 uppercase tracking-wide hidden sm:table-cell">Inisiatif</th>
+              <th className="text-left px-4 py-3 text-[11px] font-bold text-gray-400 uppercase tracking-wide hidden md:table-cell">Lokasi</th>
+              <th className="text-left px-4 py-3 text-[11px] font-bold text-gray-400 uppercase tracking-wide"></th>
+            </tr>
           </thead>
           <tbody className="divide-y divide-gray-50">
             {filtered.map(item=>{
@@ -67,9 +75,9 @@ export default function StoriesPage() {
                 <tr key={item.id} className="hover:bg-gray-50/60 transition-colors">
                   <td className="px-4 py-3 w-14"><div className="w-10 h-10 rounded-lg overflow-hidden bg-gray-100 relative">{item.image&&<Image src={item.image} alt="" fill className="object-cover" sizes="40px"/>}</div></td>
                   <td className="px-4 py-3 max-w-[180px]"><p className="font-semibold text-gray-900 truncate">{item.title}</p><p className="text-xs text-gray-400 mt-0.5">{item.date}</p></td>
-                  <td className="px-4 py-3 max-w-[180px]"><p className="text-xs text-gray-600 truncate">{(en as any)?.title||<span className="text-gray-300 italic">—</span>}</p></td>
-                  <td className="px-4 py-3"><span className="px-2 py-0.5 text-[10px] font-bold rounded-full bg-violet-100 text-violet-700">{getInit(item.initiativeSlug)}</span></td>
-                  <td className="px-4 py-3">{item.location&&<span className="flex items-center gap-1 text-xs text-gray-500"><MapPin className="w-3 h-3"/>{item.location}</span>}</td>
+                  <td className="px-4 py-3 max-w-[180px] hidden sm:table-cell"><p className="text-xs text-gray-600 truncate">{(en as any)?.title||<span className="text-gray-300 italic">—</span>}</p></td>
+                  <td className="px-4 py-3 hidden sm:table-cell"><span className="px-2 py-0.5 text-[10px] font-bold rounded-full bg-violet-100 text-violet-700">{getInit(item.initiativeSlug)}</span></td>
+                  <td className="px-4 py-3 hidden md:table-cell">{item.location&&<span className="flex items-center gap-1 text-xs text-gray-500"><MapPin className="w-3 h-3"/>{item.location}</span>}</td>
                   <td className="px-4 py-3"><div className="flex gap-1 justify-end">
                     <button onClick={()=>openEdit(item)} className="w-7 h-7 flex items-center justify-center rounded-lg hover:bg-violet-50 text-gray-400 hover:text-violet-600 transition-colors"><Pencil className="w-3.5 h-3.5"/></button>
                     <button onClick={()=>{if(confirm("Hapus?"))deleteStory(item.id)}} className="w-7 h-7 flex items-center justify-center rounded-lg hover:bg-red-50 text-gray-400 hover:text-red-500 transition-colors"><Trash2 className="w-3.5 h-3.5"/></button>
@@ -79,6 +87,7 @@ export default function StoriesPage() {
             })}
           </tbody>
         </table>
+        </div>
         {filtered.length===0&&<p className="text-center py-12 text-gray-400 text-sm">Tidak ada data</p>}
       </div>
 
