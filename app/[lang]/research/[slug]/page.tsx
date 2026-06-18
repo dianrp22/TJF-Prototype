@@ -84,7 +84,6 @@ export default function ResearchAreaPage({ params }: Props) {
         otherAreas={otherAreas as any[]}
         areaSlug={params.slug}
         lang={lang}
-        lp={lp}
         tr={tr}
       />
     </div>

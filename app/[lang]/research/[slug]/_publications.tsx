@@ -19,7 +19,6 @@ interface Props {
   otherAreas: any[];
   areaSlug: string;
   lang: string;
-  lp: (path: string) => string;
   tr: {
     back: string;
     all: string;
@@ -31,7 +30,8 @@ interface Props {
   };
 }
 
-export default function ResearchPublications({ areaPubs, categories, otherAreas, areaSlug, lang, lp, tr }: Props) {
+export default function ResearchPublications({ areaPubs, categories, otherAreas, areaSlug, lang, tr }: Props) {
+  const lp = (path: string) => lang === "en" ? path : `/${lang}${path}`;
   const [activeFilter, setActiveFilter] = useState<string>("all");
 
   const filtered = activeFilter === "all"
