@@ -1,42 +1,42 @@
 # PROPOSAL PENGEMBANGAN DAN TRANSFORMASI WEBSITE
 ## Tay Juhana Foundation sebagai Pusat Pengetahuan Lahan Suboptimal untuk Masa Depan Pangan
 
-**Diajukan oleh:** [NAMA ORGANISASI/PERUSAHAAN]  
+**Diajukan oleh:** [NAMA]  
 **Tanggal:** 19 Juni 2026  
 **Kepada:** Tay Juhana Foundation  
 
 ---
 
-## A. Profil Organisasi
+## A. Profil Pelaksana
 
-[NAMA ORGANISASI] adalah [DESKRIPSI SINGKAT ORGANISASI — jenis usaha, bidang, sejak kapan berdiri]. Kami berfokus pada pengembangan solusi digital untuk organisasi, lembaga riset, yayasan, dan NGO yang berorientasi pada dampak.
+Saya adalah seorang pengembang web fullstack dengan pengalaman dalam membangun platform digital untuk organisasi, lembaga riset, yayasan, dan NGO yang berorientasi pada dampak.
 
-Pengalaman kami meliputi pengembangan website institusional, platform manajemen pengetahuan, sistem CMS, serta integrasi analitik digital untuk berbagai klien di sektor nirlaba dan publik.
+Pengalaman saya meliputi pengembangan website institusional, platform manajemen pengetahuan, sistem CMS, serta integrasi analitik digital. Saya juga memiliki pengalaman bekerja langsung di dalam ekosistem yayasan berbasis pengetahuan, sehingga memahami kebutuhan dan tantangan yang dihadapi organisasi seperti TJF.
 
 ---
 
 ## B. Pemahaman Terhadap Kebutuhan Proyek
 
-Kami memahami bahwa TJF tidak sekadar membutuhkan pembaruan tampilan website, melainkan transformasi mendasar — dari website organisasi konvensional menjadi **ekosistem pengetahuan digital** yang mampu:
+Saya memahami bahwa TJF tidak sekadar membutuhkan pembaruan tampilan website, melainkan transformasi mendasar — dari website organisasi konvensional menjadi **ekosistem pengetahuan digital** yang mampu:
 
 - Mengintegrasikan riset, publikasi, cerita lapangan, dan inisiatif dalam satu platform terhubung
 - Menjangkau audiens beragam: pemerintah, akademisi, petani, CSO, sektor swasta, hingga publik umum
 - Mendukung pengelolaan konten secara mandiri oleh tim TJF secara berkelanjutan
 
-Kami melihat peluang besar untuk memposisikan website TJF sebagai **referensi utama pengetahuan lahan suboptimal di Indonesia** — bukan sekadar media komunikasi, tetapi ruang yang mempertemukan gagasan, bukti riset, dan pengalaman lapangan.
+Saya melihat peluang besar untuk memposisikan website TJF sebagai **referensi utama pengetahuan lahan suboptimal di Indonesia** — bukan sekadar media komunikasi, tetapi ruang yang mempertemukan gagasan, bukti riset, dan pengalaman lapangan.
 
-Untuk membuktikan pemahaman ini, kami telah menyiapkan **prototipe fungsional** yang dapat diakses di:  
+Untuk membuktikan pemahaman ini, saya telah menyiapkan **prototipe fungsional** yang dapat diakses di:  
 **[URL NETLIFY PROTOTYPE]**
 
-Prototipe ini menggambarkan visi arsitektur informasi, pengalaman pengguna, dan sistem pengelolaan konten yang kami usulkan — bukan mockup statis, melainkan aplikasi web yang berjalan penuh.
+Prototipe ini menggambarkan visi arsitektur informasi, pengalaman pengguna, dan sistem pengelolaan konten yang saya usulkan — bukan mockup statis, melainkan aplikasi web yang berjalan penuh.
 
 ---
 
 ## C. Pendekatan dan Metodologi
 
-Kami mengusulkan pendekatan **kolaboratif berbasis iterasi** yang memastikan setiap tahapan melibatkan tim TJF secara aktif, sehingga hasil akhir benar-benar mencerminkan kebutuhan dan nilai organisasi.
+Saya mengusulkan pendekatan **kolaboratif berbasis iterasi** yang memastikan setiap tahapan melibatkan tim TJF secara aktif, sehingga hasil akhir benar-benar mencerminkan kebutuhan dan nilai organisasi.
 
-Pengembangan website TJF tidak dimulai dari nol. Kami telah memiliki pengalaman langsung membangun platform digital untuk organisasi sejenis — termasuk yayasan dan lembaga berbasis pengetahuan — sehingga proses pengembangan dapat berjalan lebih efisien, terprediksi, dan dengan risiko yang lebih rendah. Prototipe yang telah kami siapkan menjadi bukti nyata dari pemahaman dan kesiapan teknis tersebut.
+Pengembangan website TJF tidak dimulai dari nol. Saya telah memiliki pengalaman langsung membangun platform digital untuk organisasi sejenis — termasuk yayasan dan lembaga berbasis pengetahuan — sehingga proses pengembangan dapat berjalan lebih efisien, terprediksi, dan dengan risiko yang lebih rendah. Prototipe yang telah saya siapkan menjadi bukti nyata dari pemahaman dan kesiapan teknis tersebut.
 
 Selain itu, seluruh pengembangan akan dilengkapi dengan optimasi SEO bawaan, termasuk pengalihan (redirect) halaman dari website lama ke website baru untuk memastikan visibilitas TJF di mesin pencari tidak terganggu selama proses migrasi.
 
@@ -94,7 +94,7 @@ Selain itu, seluruh pengembangan akan dilengkapi dengan optimasi SEO bawaan, ter
 
 ## E. Pelaksana
 
-Proyek ini akan dilaksanakan oleh **[NAMA]** sebagai pengembang web fullstack yang merangkap seluruh peran teknis, mulai dari discovery, desain, pengembangan, hingga peluncuran dan serah terima.
+Proyek ini akan saya kerjakan secara penuh sebagai pengembang web fullstack, merangkap seluruh peran teknis mulai dari discovery, desain, pengembangan, hingga peluncuran dan serah terima.
 
 | Peran | Tanggung Jawab |
 |-------|----------------|
@@ -123,38 +123,44 @@ Proyek ini akan dilaksanakan oleh **[NAMA]** sebagai pengembang web fullstack ya
 
 ---
 
-## G. Portofolio
+## G. Bukti Konsep & Portofolio
 
-### 1. Kaleka Foundation — kaleka.id (2024)
-Website resmi Yayasan Kaleka, organisasi yang berfokus pada pemberdayaan masyarakat adat dan pengelolaan sumber daya alam berkelanjutan di Indonesia. Dikembangkan dengan Next.js, mencakup halaman riset, publikasi, inisiatif strategis, berita, profil tim, dan sistem manajemen konten berbasis dashboard.
+### Prototipe TJF Website Refreshment (2026) — Khusus Dikembangkan untuk Proposal Ini
 
+Sebelum mengajukan proposal ini, saya telah mengembangkan **prototipe fungsional** website TJF sebagai wujud nyata dari pemahaman dan kesiapan teknis saya. Prototipe ini bukan sekadar mockup atau desain statis — melainkan aplikasi web yang berjalan penuh dan dapat langsung dijelajahi.
+
+Fitur yang telah diimplementasikan dalam prototipe:
+- Halaman publik: Beranda, Topik, Riset, Publikasi, Inisiatif, Berita, Tentang, Kontak
+- Dukungan multibahasa Indonesia & Inggris
+- Dashboard CMS untuk pengelolaan konten
+- Dashboard analitik (siap integrasi Google Analytics 4)
+- Desain responsif untuk desktop dan mobile
+
+🔗 **[URL NETLIFY PROTOTYPE]** — Website Utama  
+🔗 **[URL NETLIFY PROTOTYPE]/dashboard** — CMS Admin
+
+---
+
+### Portofolio Terkait
+
+**Kaleka Foundation — kaleka.id (2024)**  
+Website yayasan yang berfokus pada pemberdayaan masyarakat adat dan pengelolaan sumber daya alam. Mencakup halaman riset, publikasi, inisiatif strategis, berita, profil tim, dan CMS berbasis dashboard.  
 🔗 **https://kaleka.id**
 
----
-
-### 2. Kolibri — kolibri.or.id (2024)
-Website organisasi Kolibri dengan fitur lengkap: riset lapangan, field insights, publikasi, inisiatif, profil anggota, donasi, dan halaman komunitas desa. Dibangun dengan Next.js, responsif penuh, dan mencerminkan pendekatan platform pengetahuan berbasis komunitas.
-
+**Kolibri — kolibri.or.id (2024)**  
+Platform pengetahuan berbasis komunitas dengan fitur: riset lapangan, field insights, publikasi, inisiatif, profil anggota, dan halaman komunitas desa.  
 🔗 **https://kolibri.or.id**
-
----
-
-### 3. Prototipe TJF Website Refreshment (2026)
-Prototipe fungsional yang dikembangkan khusus untuk proposal ini, menggambarkan visi website TJF sebagai knowledge center. Dibangun dengan Next.js 14, CMS berbasis dashboard, dukungan multilingual Indonesia & Inggris, dashboard analitik, dan desain responsif penuh.
-
-🔗 **[URL NETLIFY PROTOTYPE]**
 
 ---
 
 ## H. Pernyataan Komitmen
 
-Kami berkomitmen untuk menjalankan seluruh proses pengembangan secara kolaboratif bersama tim TJF, memastikan keterlibatan aktif dalam setiap tahapan review, serta menghasilkan website yang tidak hanya memenuhi kebutuhan teknis, tetapi benar-benar mencerminkan misi dan nilai Tay Juhana Foundation sebagai organisasi penghasil dan penghubung pengetahuan.
+Saya berkomitmen untuk menjalankan seluruh proses pengembangan secara kolaboratif bersama tim TJF, memastikan keterlibatan aktif dalam setiap tahapan review, serta menghasilkan website yang tidak hanya memenuhi kebutuhan teknis, tetapi benar-benar mencerminkan misi dan nilai Tay Juhana Foundation sebagai organisasi penghasil dan penghubung pengetahuan.
 
-Kami siap untuk mendiskusikan proposal ini lebih lanjut dan terbuka terhadap masukan dari tim TJF.
+Saya siap untuk mendiskusikan proposal ini lebih lanjut dan terbuka terhadap masukan dari tim TJF.
 
 ---
 
-**[NAMA ORGANISASI/PERUSAHAAN]**  
-[NAMA PENANGGUNG JAWAB]  
-[JABATAN]  
+**[NAMA]**  
+Pengembang Web Fullstack  
 [EMAIL] | [NOMOR TELEPON]  

@@ -112,10 +112,15 @@ export default function HomePage({ params }: Props) {
             </div>
           </div>
         </div>
+        <div className="absolute bottom-0 left-0 right-0 z-10 pointer-events-none">
+          <svg viewBox="0 0 1440 80" fill="none" preserveAspectRatio="none" className="w-full block">
+            <path d="M0 80H1440V30C1200 70 960 10 720 30C480 50 240 10 0 30V80Z" fill="white" />
+          </svg>
+        </div>
       </section>
 
       {/* ─── STATS ─────────────────────────────────────────────── */}
-      <section className="py-16 bg-white">
+      <section className="relative py-16 bg-white -mt-px">
         <div className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
           <div className="grid grid-cols-1 sm:grid-cols-3 gap-4">
             {statsData.map((s, i) => {
@@ -136,11 +141,6 @@ export default function HomePage({ params }: Props) {
               );
             })}
           </div>
-        </div>
-        <div className="absolute bottom-0 left-0 right-0 z-10 pointer-events-none">
-          <svg viewBox="0 0 1440 80" fill="none" preserveAspectRatio="none" className="w-full">
-            <path d="M0 80H1440V30C1200 70 960 10 720 30C480 50 240 10 0 30V80Z" fill="white" />
-          </svg>
         </div>
       </section>
 
