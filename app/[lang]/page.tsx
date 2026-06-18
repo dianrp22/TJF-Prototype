@@ -47,7 +47,7 @@ export default function HomePage({ params }: Props) {
       <section className="relative min-h-[90vh] flex items-center bg-hero-gradient overflow-hidden">
         <div className="absolute inset-0 bg-dot-pattern opacity-20" />
         <div className="absolute inset-0 bg-noise" />
-        <div className="hidden sm:block"><ParticleCanvas /></div>
+        <div className="absolute inset-0 hidden sm:block pointer-events-none"><ParticleCanvas /></div>
         <div className="absolute top-20 right-10 w-80 h-80 bg-tjf-blue-light/30 rounded-full blur-3xl animate-float pointer-events-none hidden sm:block" />
         <div className="absolute bottom-20 left-10 w-60 h-60 bg-tjf-green/20 rounded-full blur-3xl animate-float-delay pointer-events-none hidden sm:block" />
         <div className="absolute top-1/2 right-1/4 w-40 h-40 bg-white/10 rounded-full blur-2xl animate-float-slow pointer-events-none hidden sm:block" />
