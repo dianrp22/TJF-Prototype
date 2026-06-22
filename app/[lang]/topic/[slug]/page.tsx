@@ -1,7 +1,7 @@
+"use client";
 import Image from "next/image";
-import { notFound } from "next/navigation";
 import { BookOpen, Newspaper } from "lucide-react";
-import { getServerData } from "@/lib/getServerData";
+import { usePublicData } from "@/lib/usePublicData";
 import TopicDetailContent from "./_content";
 
 interface Props {
@@ -11,10 +11,10 @@ interface Props {
 export default function TopicDetailPage({ params }: Props) {
   const lang = params.lang;
   const lp = (path: string) => lang === "en" ? path : `/${lang}${path}`;
-  const { knowledgeTopics, publications, newsItems, initiatives, initiativeStories } = getServerData(lang);
+  const { knowledgeTopics, publications, newsItems, initiatives, initiativeStories } = usePublicData(lang);
 
   const topic = knowledgeTopics.find((t) => t.slug === params.slug);
-  if (!topic) return notFound();
+  if (!topic) return <div className="min-h-screen flex items-center justify-center text-gray-400">Konten tidak ditemukan.</div>;
 
   const relatedPubs = publications.filter((p) =>
     (p.topics as string[])?.includes(topic.slug)

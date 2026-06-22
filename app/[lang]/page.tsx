@@ -1,3 +1,4 @@
+"use client";
 import Link from "next/link";
 import Image from "next/image";
 import dynamic from "next/dynamic";
@@ -5,7 +6,7 @@ import { ArrowRight, BookOpen, Sprout, MapPin, Search } from "lucide-react";
 import AnimatedSection from "@/components/ui/AnimatedSection";
 import AnimatedCounter from "@/components/ui/AnimatedCounter";
 import { useT } from "@/lib/i18n";
-import { getServerData } from "@/lib/getServerData";
+import { usePublicData } from "@/lib/usePublicData";
 import PartnerLogo from "@/components/ui/PartnerLogo";
 import type { Lang } from "@/contexts/LanguageContext";
 
@@ -26,7 +27,7 @@ export default function HomePage({ params }: Props) {
   const lang = params.lang;
   const tr = useT(lang as Lang).home;
   const lp = (path: string) => lang === "en" ? path : `/${lang}${path}`;
-  const { publications, initiatives, newsItems, knowledgeTopics, partners } = getServerData(lang);
+  const { publications, initiatives, newsItems, knowledgeTopics, partners } = usePublicData(lang);
 
   const totalProjects  = initiatives.reduce((s, i) => s + i.stats.projects,  0);
   const totalProvinces = Math.max(...initiatives.map((i) => i.stats.provinces));

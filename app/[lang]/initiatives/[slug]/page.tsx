@@ -1,6 +1,6 @@
+"use client";
 import Image from "next/image";
-import { notFound } from "next/navigation";
-import { getServerData } from "@/lib/getServerData";
+import { usePublicData } from "@/lib/usePublicData";
 import StoriesContent from "./_stories";
 
 interface Props {
@@ -9,10 +9,10 @@ interface Props {
 
 export default function InitiativeDetailPage({ params }: Props) {
   const { lang, slug } = params;
-  const { initiatives, initiativeStories } = getServerData(lang);
+  const { initiatives, initiativeStories } = usePublicData(lang);
 
   const initiative = initiatives.find((i) => i.slug === slug);
-  if (!initiative) return notFound();
+  if (!initiative) return <div className="min-h-screen flex items-center justify-center text-gray-400">Konten tidak ditemukan.</div>;
 
   const stories = initiativeStories.filter((s) => s.initiativeSlug === slug);
 
@@ -80,7 +80,7 @@ export default function InitiativeDetailPage({ params }: Props) {
 
       {/* ── FILTERS + STORIES ── */}
       <StoriesContent
-        stories={stories}
+        stories={stories as any[]}
         lang={lang}
         programSlug={slug}
         ui={ui}

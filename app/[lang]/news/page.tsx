@@ -1,9 +1,10 @@
+"use client";
 import Image from "next/image";
 import Link from "next/link";
 import { ArrowRight } from "lucide-react";
 import AnimatedSection from "@/components/ui/AnimatedSection";
 import { useT } from "@/lib/i18n";
-import { getServerData } from "@/lib/getServerData";
+import { usePublicData } from "@/lib/usePublicData";
 import type { Lang } from "@/contexts/LanguageContext";
 
 const catStyleId: Record<string, string> = {
@@ -32,7 +33,7 @@ export default function NewsPage({ params }: Props) {
   const lang = params.lang;
   const lp = (path: string) => lang === "en" ? path : `/${lang}${path}`;
   const tr = useT(lang as Lang).news;
-  const { newsItems } = getServerData(lang);
+  const { newsItems } = usePublicData(lang);
   const catStyle = lang === "en" ? catStyleEn : catStyleId;
 
   const featured = newsItems[0];
@@ -61,39 +62,41 @@ export default function NewsPage({ params }: Props) {
 
       <div className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8 py-12">
         {/* Featured */}
-        <AnimatedSection className="mb-10">
-          <Link href={lp(`/news/${(featured as any).slug}`)} className="group bg-white border border-gray-100 rounded-3xl overflow-hidden shadow-card hover:shadow-card-hover transition-all duration-300 flex flex-col lg:flex-row">
-            <div className="relative lg:w-2/5 h-64 lg:h-auto overflow-hidden min-h-[240px]">
-              <Image
-                src={featured.image}
-                alt={featured.title}
-                fill
-                className="object-cover group-hover:scale-105 transition-transform duration-500"
-                sizes="(max-width: 1024px) 100vw, 40vw"
-                priority
-              />
-              <div className="absolute inset-0 bg-gradient-to-r from-black/20 to-transparent" />
-              <div className="absolute top-4 left-4">
-                <span className={`text-xs font-bold px-3 py-1 rounded-full ${catStyle[featured.category] ?? "bg-gray-100 text-gray-600"}`}>
-                  {featured.category}
-                </span>
+        {featured && (
+          <AnimatedSection className="mb-10">
+            <Link href={lp(`/news/${(featured as any).slug}`)} className="group bg-white border border-gray-100 rounded-3xl overflow-hidden shadow-card hover:shadow-card-hover transition-all duration-300 flex flex-col lg:flex-row">
+              <div className="relative lg:w-2/5 h-64 lg:h-auto overflow-hidden min-h-[240px]">
+                <Image
+                  src={featured.image}
+                  alt={featured.title}
+                  fill
+                  className="object-cover group-hover:scale-105 transition-transform duration-500"
+                  sizes="(max-width: 1024px) 100vw, 40vw"
+                  priority
+                />
+                <div className="absolute inset-0 bg-gradient-to-r from-black/20 to-transparent" />
+                <div className="absolute top-4 left-4">
+                  <span className={`text-xs font-bold px-3 py-1 rounded-full ${catStyle[featured.category] ?? "bg-gray-100 text-gray-600"}`}>
+                    {featured.category}
+                  </span>
+                </div>
               </div>
-            </div>
-            <div className="flex-1 p-8 flex flex-col justify-center">
-              <div className="flex items-center gap-2 mb-3">
-                <span className="w-1.5 h-1.5 bg-green-500 rounded-full" />
-                <span className="text-xs text-gray-400 font-medium">{featured.date}</span>
+              <div className="flex-1 p-8 flex flex-col justify-center">
+                <div className="flex items-center gap-2 mb-3">
+                  <span className="w-1.5 h-1.5 bg-green-500 rounded-full" />
+                  <span className="text-xs text-gray-400 font-medium">{featured.date}</span>
+                </div>
+                <h2 className="text-2xl font-black text-gray-900 mb-3 group-hover:text-tjf-blue transition-colors leading-snug">
+                  {featured.title}
+                </h2>
+                <p className="text-gray-500 text-base leading-relaxed mb-5">{featured.excerpt}</p>
+                <div className="inline-flex items-center gap-2 text-tjf-blue font-bold text-sm group-hover:gap-3 transition-all duration-200">
+                  {tr.readMore} <ArrowRight className="w-4 h-4" />
+                </div>
               </div>
-              <h2 className="text-2xl font-black text-gray-900 mb-3 group-hover:text-tjf-blue transition-colors leading-snug">
-                {featured.title}
-              </h2>
-              <p className="text-gray-500 text-base leading-relaxed mb-5">{featured.excerpt}</p>
-              <div className="inline-flex items-center gap-2 text-tjf-blue font-bold text-sm group-hover:gap-3 transition-all duration-200">
-                {tr.readMore} <ArrowRight className="w-4 h-4" />
-              </div>
-            </div>
-          </Link>
-        </AnimatedSection>
+            </Link>
+          </AnimatedSection>
+        )}
 
         {/* Grid */}
         <div className="grid grid-cols-1 sm:grid-cols-2 lg:grid-cols-3 gap-5">

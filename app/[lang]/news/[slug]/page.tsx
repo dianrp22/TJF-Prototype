@@ -1,9 +1,9 @@
+"use client";
 import Image from "next/image";
 import Link from "next/link";
-import { notFound } from "next/navigation";
 import { ArrowLeft, ArrowRight, Calendar, Tag, Share2 } from "lucide-react";
 import AnimatedSection from "@/components/ui/AnimatedSection";
-import { getServerData } from "@/lib/getServerData";
+import { usePublicData } from "@/lib/usePublicData";
 
 interface Props {
   params: { lang: string; slug: string };
@@ -38,10 +38,10 @@ type NewsItem = { slug: string; id: number; title: string; category: string; dat
 export default function NewsDetailPage({ params }: Props) {
   const lang = params.lang;
   const lp = (path: string) => lang === "en" ? path : `/${lang}${path}`;
-  const { newsItems } = getServerData(lang);
+  const { newsItems } = usePublicData(lang);
 
   const article = (newsItems as unknown as NewsItem[]).find((n) => n.slug === params.slug);
-  if (!article) return notFound();
+  if (!article) return <div className="min-h-screen flex items-center justify-center text-gray-400">Konten tidak ditemukan.</div>;
 
   const otherArticles = (newsItems as unknown as NewsItem[]).filter((n) => n.slug !== params.slug).slice(0, 3);
 

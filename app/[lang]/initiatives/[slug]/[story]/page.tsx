@@ -1,9 +1,9 @@
+"use client";
 import Image from "next/image";
 import Link from "next/link";
-import { notFound } from "next/navigation";
 import { ArrowLeft, ArrowRight, MapPin, Layers, Leaf, Share2, Calendar } from "lucide-react";
 import AnimatedSection from "@/components/ui/AnimatedSection";
-import { getServerData } from "@/lib/getServerData";
+import { usePublicData } from "@/lib/usePublicData";
 
 interface Props {
   params: { lang: string; slug: string; story: string };
@@ -12,12 +12,12 @@ interface Props {
 export default function InitiativeStoryPage({ params }: Props) {
   const lang = params.lang;
   const lp = (path: string) => lang === "en" ? path : `/${lang}${path}`;
-  const { initiatives, initiativeStories } = getServerData(lang);
+  const { initiatives, initiativeStories } = usePublicData(lang);
 
   const initiative = initiatives.find((i) => i.slug === params.slug);
   const story      = initiativeStories.find((s) => s.slug === params.story && s.initiativeSlug === params.slug);
 
-  if (!initiative || !story) return notFound();
+  if (!initiative || !story) return <div className="min-h-screen flex items-center justify-center text-gray-400">Konten tidak ditemukan.</div>;
 
   const related = initiativeStories
     .filter((s) => s.initiativeSlug === params.slug && s.slug !== params.story)

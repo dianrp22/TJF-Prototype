@@ -1,10 +1,11 @@
+"use client";
 import Link from "next/link";
 import Image from "next/image";
 import { ArrowRight, CheckCircle2 } from "lucide-react";
 import AnimatedSection from "@/components/ui/AnimatedSection";
 import AnimatedCounter from "@/components/ui/AnimatedCounter";
 import { useT } from "@/lib/i18n";
-import { getServerData } from "@/lib/getServerData";
+import { usePublicData } from "@/lib/usePublicData";
 import type { Lang } from "@/contexts/LanguageContext";
 
 const colorMap: Record<string, { bg: string; text: string; badge: string; border: string; icon: string }> = {
@@ -39,7 +40,7 @@ export default function InitiativesPage({ params }: Props) {
   const lang = params.lang;
   const tr = useT(lang as Lang).initiatives;
   const lp = (path: string) => lang === "en" ? path : `/${lang}${path}`;
-  const { initiatives } = getServerData(lang);
+  const { initiatives } = usePublicData(lang);
 
   const totalProjects  = initiatives.reduce((s, i) => s + i.stats.projects,  0);
   const totalProvinces = Math.max(...initiatives.map((i) => i.stats.provinces));
