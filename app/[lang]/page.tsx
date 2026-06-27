@@ -1,7 +1,6 @@
 "use client";
 import Link from "next/link";
 import Image from "next/image";
-import dynamic from "next/dynamic";
 import { ArrowRight, BookOpen, Sprout, MapPin, Search } from "lucide-react";
 import AnimatedSection from "@/components/ui/AnimatedSection";
 import AnimatedCounter from "@/components/ui/AnimatedCounter";
@@ -9,8 +8,6 @@ import { useT } from "@/lib/i18n";
 import { usePublicData } from "@/lib/usePublicData";
 import PartnerLogo from "@/components/ui/PartnerLogo";
 import type { Lang } from "@/contexts/LanguageContext";
-
-const ParticleCanvas = dynamic(() => import("@/components/ui/ParticleCanvas"), { ssr: false });
 
 const catColors: Record<string, string> = {
   "Research Article": "bg-blue-100 text-blue-700",
@@ -45,38 +42,58 @@ export default function HomePage({ params }: Props) {
   return (
     <div className="bg-white overflow-x-hidden">
       {/* ─── HERO ─────────────────────────────────────────────── */}
-      <section className="relative min-h-[90vh] flex items-center bg-hero-gradient overflow-hidden">
-        <div className="absolute inset-0 bg-dot-pattern opacity-20" />
-        <div className="absolute inset-0 hidden sm:block pointer-events-none"><ParticleCanvas /></div>
-        <div className="absolute top-20 right-10 w-96 h-96 bg-tjf-blue-light/20 rounded-full blur-3xl animate-float pointer-events-none hidden sm:block" />
+      <section className="relative min-h-[calc(100vh-4rem)] overflow-hidden">
+        {/* Background split — kiri putih, kanan foto */}
+        <div className="absolute inset-0 flex">
+          <div className="w-full lg:w-1/2 bg-white" />
+          <div className="lg:block lg:w-1/2 relative hidden">
+            <Image
+              src="https://images.unsplash.com/photo-1500382017468-9049fed747ef?w=1200&q=85"
+              alt="Indonesian farmland"
+              fill
+              className="object-cover"
+              priority
+              sizes="50vw"
+            />
+            {/* Fade dari kiri ke kanan */}
+            <div className="absolute inset-0 bg-gradient-to-r from-white via-white/20 to-transparent" />
+            {/* Latest publication card */}
+            <div className="absolute bottom-8 left-8 right-8">
+              <div className="bg-white/95 backdrop-blur-sm rounded-2xl p-4 shadow-xl max-w-xs">
+                <p className="text-[10px] text-gray-400 mb-1 font-bold uppercase tracking-widest">
+                  {lang === "en" ? "Latest Publication" : "Publikasi Terbaru"}
+                </p>
+                <p className="text-sm font-bold text-gray-900 leading-snug line-clamp-2">{publications[0]?.title}</p>
+                <Link href={lp(`/publication/${(publications[0] as any)?.slug}`)} className="inline-flex items-center gap-1 text-tjf-blue text-xs font-bold mt-2 hover:gap-2 transition-all">
+                  {lang === "en" ? "Read more" : "Baca selengkapnya"} <ArrowRight className="w-3 h-3" />
+                </Link>
+              </div>
+            </div>
+          </div>
+        </div>
 
-        <div className="relative z-20 max-w-7xl mx-auto px-4 sm:px-6 lg:px-8 py-24 lg:py-20 w-full">
-          <div className="max-w-2xl">
+        {/* Konten — sejajar dengan navbar max-w-7xl */}
+        <div className="relative z-10 max-w-7xl mx-auto px-4 sm:px-6 lg:px-8 min-h-[calc(100vh-4rem)] flex items-center">
+          <div className="w-full lg:w-1/2 py-28 lg:py-0">
             <div className="hero-1">
-              <span className="inline-flex items-center gap-2 bg-white/15 border border-white/25 text-white text-xs font-semibold px-3 py-1.5 rounded-full mb-6 backdrop-blur-sm">
-                <span className="w-1.5 h-1.5 bg-green-400 rounded-full animate-pulse" />
+              <span className="inline-flex items-center gap-2 bg-tjf-blue/10 border border-tjf-blue/20 text-tjf-blue text-xs font-bold px-3 py-1.5 rounded-full mb-6">
+                <span className="w-1.5 h-1.5 bg-tjf-green rounded-full animate-pulse" />
                 {tr.heroBadge}
               </span>
             </div>
-            <h1 className="hero-2 font-display text-5xl sm:text-6xl lg:text-7xl font-black text-white leading-[1.05] tracking-tight mb-6">
-              {tr.heroLine1} <br />
-              <span className="text-transparent bg-clip-text bg-gradient-to-r from-blue-200 to-green-300">
-                {tr.heroLine2}
-              </span>
-              <br />
-              <span className="text-white/90">{tr.heroLine3}</span>{" "}
+            <h1 className="hero-2 font-display text-5xl sm:text-6xl xl:text-7xl font-black text-tjf-blue-dark leading-[1.05] tracking-tight mb-4">
+              {tr.heroLine1}<br />
+              {tr.heroLine2}<br />
               <span className="relative inline-block">
-                <span className="text-white">{tr.heroLine4}</span>
-                <svg className="absolute -bottom-1 left-0 w-full" viewBox="0 0 200 8" fill="none">
-                  <path d="M2 5.5C50 2 100 7 198 4" stroke="rgba(134,239,172,0.6)" strokeWidth="3" strokeLinecap="round"/>
-                </svg>
+                <span className="relative z-10">{tr.heroLine3} {tr.heroLine4}</span>
+                <span className="absolute bottom-1 left-0 w-full h-4 bg-tjf-amber/30 -z-0 rounded" />
               </span>
             </h1>
-            <p className="hero-3 text-blue-100/90 text-lg leading-relaxed mb-10 max-w-lg">{tr.heroSubtitle}</p>
+            <p className="hero-3 text-gray-500 text-lg leading-relaxed mb-10 max-w-md">{tr.heroSubtitle}</p>
             <div className="hero-4 flex flex-col sm:flex-row gap-3">
               <Link
                 href={lp("/topic")}
-                className="group inline-flex items-center justify-center gap-2 bg-white text-tjf-blue font-bold px-6 py-3.5 rounded-xl shadow-lg hover:shadow-xl hover:scale-[1.02] transition-all duration-300"
+                className="group inline-flex items-center justify-center gap-2 bg-tjf-blue text-white font-bold px-6 py-3.5 rounded-xl shadow-lg hover:shadow-xl hover:bg-tjf-blue-dark hover:scale-[1.02] transition-all duration-300"
               >
                 <Search className="w-4 h-4" />
                 {tr.heroCta1}
@@ -84,41 +101,19 @@ export default function HomePage({ params }: Props) {
               </Link>
               <Link
                 href={lp("/initiatives")}
-                className="inline-flex items-center justify-center gap-2 border border-white/30 text-white font-semibold px-6 py-3.5 rounded-xl hover:bg-white/10 backdrop-blur-sm transition-all duration-300"
+                className="inline-flex items-center justify-center gap-2 border-2 border-tjf-blue text-tjf-blue font-semibold px-6 py-3.5 rounded-xl hover:bg-tjf-blue-pale transition-all duration-300"
               >
                 {tr.heroCta2}
               </Link>
             </div>
-          </div>
-        </div>
-        <div className="absolute bottom-0 left-0 right-0 z-10 pointer-events-none">
-          <svg viewBox="0 0 1440 80" fill="none" preserveAspectRatio="none" className="w-full block">
-            <path d="M0 80H1440V30C1200 70 960 10 720 30C480 50 240 10 0 30V80Z" fill="white" />
-          </svg>
-        </div>
-      </section>
-
-      {/* ─── STATS ─────────────────────────────────────────────── */}
-      <section className="relative py-16 bg-white -mt-px">
-        <div className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
-          <div className="grid grid-cols-1 sm:grid-cols-3 gap-4">
-            {statsData.map((s, i) => {
-              const Icon = s.icon;
-              return (
-                <AnimatedSection key={s.labelKey} delay={i * 0.08}>
-                  <div className="group relative bg-white border border-gray-100 rounded-2xl p-6 shadow-card hover:shadow-card-hover transition-all duration-300 hover:-translate-y-1 overflow-hidden">
-                    <div className={`absolute top-0 right-0 w-20 h-20 bg-gradient-to-br ${s.color} opacity-10 rounded-bl-3xl`} />
-                    <div className={`w-10 h-10 bg-gradient-to-br ${s.color} rounded-xl flex items-center justify-center mb-3 shadow-md`}>
-                      <Icon className="w-5 h-5 text-white" />
-                    </div>
-                    <div className="text-3xl font-black text-gray-900 mb-0.5">
-                      <AnimatedCounter value={s.value} />
-                    </div>
-                    <div className="text-sm text-gray-500 font-medium">{tr[s.labelKey as keyof typeof tr]}</div>
-                  </div>
-                </AnimatedSection>
-              );
-            })}
+            <div className="flex items-center gap-8 mt-12 pt-8 border-t border-gray-100">
+              {statsData.map((s) => (
+                <div key={s.labelKey}>
+                  <div className="text-2xl font-black text-tjf-blue-dark font-display">{s.value}</div>
+                  <div className="text-xs text-gray-400 font-medium mt-0.5">{tr[s.labelKey as keyof typeof tr]}</div>
+                </div>
+              ))}
+            </div>
           </div>
         </div>
       </section>

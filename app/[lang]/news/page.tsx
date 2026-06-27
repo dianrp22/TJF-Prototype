@@ -42,9 +42,17 @@ export default function NewsPage({ params }: Props) {
   return (
     <div className="bg-white min-h-screen">
       {/* ── HERO ─────────────────────────────────────────── */}
-      <section className="relative bg-gradient-to-br from-tjf-blue-dark to-tjf-blue text-white min-h-[380px] flex items-center overflow-hidden">
-        <div className="absolute inset-0 bg-dot-pattern opacity-30" />
-        <div className="relative max-w-7xl mx-auto px-4 sm:px-6 lg:px-8 w-full">
+      <section className="relative min-h-[420px] flex items-center overflow-hidden">
+        <Image
+          src="https://images.unsplash.com/photo-1504711434969-e33886168f5c?w=1600&q=85"
+          alt="Newsroom and media"
+          fill
+          className="object-cover"
+          priority
+          sizes="100vw"
+        />
+        <div className="absolute inset-0 bg-gradient-to-r from-tjf-blue-dark/90 via-tjf-blue-dark/70 to-tjf-blue-dark/40" />
+        <div className="relative z-10 max-w-7xl mx-auto px-4 sm:px-6 lg:px-8 py-20 w-full">
           <AnimatedSection>
             <span className="inline-flex items-center gap-1.5 bg-white/15 border border-white/20 text-white text-xs font-bold px-3 py-1.5 rounded-full mb-5 uppercase tracking-wide">
               {tr.badge}

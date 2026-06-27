@@ -68,9 +68,17 @@ export default function PublicationContent({ publications, lang, tr }: Props) {
   return (
     <div className="bg-white min-h-screen">
       {/* Header */}
-      <section className="relative bg-gradient-to-br from-tjf-blue to-tjf-blue-light text-white min-h-[380px] flex items-center overflow-hidden">
-        <div className="absolute inset-0 bg-dot-pattern opacity-30" />
-        <div className="relative max-w-7xl mx-auto px-4 sm:px-6 lg:px-8 w-full">
+      <section className="relative min-h-[420px] flex items-center overflow-hidden">
+        <Image
+          src="https://images.unsplash.com/photo-1481627834876-b7833e8f5570?w=1600&q=85"
+          alt="Books and library shelves"
+          fill
+          className="object-cover"
+          priority
+          sizes="100vw"
+        />
+        <div className="absolute inset-0 bg-gradient-to-r from-tjf-blue-dark/90 via-tjf-blue-dark/70 to-tjf-blue-dark/40" />
+        <div className="relative z-10 max-w-7xl mx-auto px-4 sm:px-6 lg:px-8 py-20 w-full">
           <motion.div initial={{ opacity: 0, y: 20 }} animate={{ opacity: 1, y: 0 }}>
             <span className="inline-flex items-center gap-1.5 bg-white/15 border border-white/20 text-xs font-bold px-3 py-1.5 rounded-full mb-4 uppercase tracking-wide">
               {tr.badge}

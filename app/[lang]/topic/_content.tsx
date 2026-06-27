@@ -85,10 +85,16 @@ export default function TopicContent({ knowledgeTopics, newsItems, publications,
   return (
     <div className="bg-white min-h-screen">
       {/* ── HERO ─────────────────────────────────────────── */}
-      <section className="relative bg-gradient-to-br from-tjf-blue-dark via-tjf-blue to-tjf-blue-light text-white min-h-[380px] flex items-center overflow-hidden">
-        <div className="absolute inset-0 bg-dot-pattern opacity-30" />
-        <div className="absolute top-0 right-0 w-96 h-96 bg-white/5 rounded-full blur-3xl" />
-        <div className="absolute bottom-0 left-0 w-64 h-64 bg-tjf-green/10 rounded-full blur-3xl" />
+      <section className="relative min-h-[420px] flex items-center overflow-hidden">
+        <Image
+          src="https://images.unsplash.com/photo-1456513080510-7bf3a84b82f8?w=1600&q=85"
+          alt="Knowledge topics"
+          fill
+          className="object-cover"
+          priority
+          sizes="100vw"
+        />
+        <div className="absolute inset-0 bg-gradient-to-r from-tjf-blue-dark/90 via-tjf-blue-dark/70 to-tjf-blue-dark/40" />
 
         <div className="relative max-w-7xl mx-auto px-4 sm:px-6 lg:px-8 w-full">
           <AnimatedSection>
