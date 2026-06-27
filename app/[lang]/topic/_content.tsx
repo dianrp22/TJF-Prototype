@@ -85,7 +85,7 @@ export default function TopicContent({ knowledgeTopics, newsItems, publications,
   return (
     <div className="bg-white min-h-screen">
       {/* ── HERO ─────────────────────────────────────────── */}
-      <section className="relative min-h-[420px] flex items-center overflow-hidden">
+      <section className="relative min-h-[420px] flex items-center overflow-hidden text-white">
         <Image
           src="https://images.unsplash.com/photo-1456513080510-7bf3a84b82f8?w=1600&q=85"
           alt="Knowledge topics"

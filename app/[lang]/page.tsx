@@ -46,7 +46,7 @@ export default function HomePage({ params }: Props) {
         {/* Background split — kiri putih, kanan foto */}
         <div className="absolute inset-0 flex">
           <div className="w-full lg:w-1/2 bg-white" />
-          <div className="lg:block lg:w-1/2 relative hidden">
+          <div className="hidden lg:block lg:w-1/2 relative">
             <Image
               src="https://images.unsplash.com/photo-1500382017468-9049fed747ef?w=1200&q=85"
               alt="Indonesian farmland"
