@@ -36,7 +36,7 @@ export default function ResearchPage({ params }: Props) {
               <FlaskConical className="w-3.5 h-3.5" />
               {tr.badge}
             </span>
-            <h1 className="font-display text-5xl sm:text-6xl font-black mb-5 leading-tight">
+            <h1 className="font-display text-5xl sm:text-6xl font-black mb-5 leading-tight bg-gradient-to-r from-cyan-400 to-[#2D7D46] bg-clip-text text-transparent">
               {tr.title}
             </h1>
             <p className="text-blue-100 text-base leading-relaxed max-w-2xl">

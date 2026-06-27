@@ -37,7 +37,7 @@ export default function AboutPage({ params }: Props) {
             <span className="inline-flex items-center gap-1.5 bg-white/15 border border-white/20 text-xs font-bold px-3 py-1.5 rounded-full mb-5 uppercase tracking-wide">
               {tr.badge}
             </span>
-            <h1 className="font-display text-5xl sm:text-6xl font-black mb-4 leading-tight">
+            <h1 className="font-display text-5xl sm:text-6xl font-black mb-4 leading-tight bg-gradient-to-r from-cyan-400 to-[#2D7D46] bg-clip-text text-transparent">
               Tay Juhana <br />
               <span className="text-transparent bg-clip-text bg-gradient-to-r from-blue-200 to-green-300">
                 Foundation

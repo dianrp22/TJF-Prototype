@@ -83,7 +83,7 @@ export default function PublicationContent({ publications, lang, tr }: Props) {
             <span className="inline-flex items-center gap-1.5 bg-white/15 border border-white/20 text-xs font-bold px-3 py-1.5 rounded-full mb-4 uppercase tracking-wide">
               {tr.badge}
             </span>
-            <h1 className="font-display text-5xl font-black mb-1">{tr.title}</h1>
+            <h1 className="font-display text-5xl font-black mb-1 bg-gradient-to-r from-cyan-400 to-[#2D7D46] bg-clip-text text-transparent">{tr.title}</h1>
             <p className="text-blue-100 text-lg opacity-90">{tr.subtitle}</p>
             <p className="text-blue-200 text-sm mt-1 max-w-md">{tr.desc}</p>
           </motion.div>

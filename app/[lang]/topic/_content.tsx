@@ -102,7 +102,7 @@ export default function TopicContent({ knowledgeTopics, newsItems, publications,
               <Compass className="w-3.5 h-3.5" />
               {tr.featureBadge}
             </span>
-            <h1 className="font-display text-5xl sm:text-6xl font-black mb-4 leading-tight">{tr.title}</h1>
+            <h1 className="font-display text-5xl sm:text-6xl font-black mb-4 leading-tight bg-gradient-to-r from-cyan-400 to-[#2D7D46] bg-clip-text text-transparent">{tr.title}</h1>
             <p className="text-blue-100 text-lg max-w-2xl leading-relaxed mb-8">{tr.heroDesc}</p>
 
             {/* Search bar */}
