@@ -47,32 +47,10 @@ export default function HomePage({ params }: Props) {
       {/* ─── HERO ─────────────────────────────────────────────── */}
       <section className="relative min-h-[90vh] flex items-center bg-hero-gradient overflow-hidden">
         <div className="absolute inset-0 bg-dot-pattern opacity-20" />
-        <div className="absolute inset-0 bg-noise" />
         <div className="absolute inset-0 hidden sm:block pointer-events-none"><ParticleCanvas /></div>
-        <div className="absolute top-20 right-10 w-80 h-80 bg-tjf-blue-light/30 rounded-full blur-3xl animate-float pointer-events-none hidden sm:block" />
-        <div className="absolute bottom-20 left-10 w-60 h-60 bg-tjf-green/20 rounded-full blur-3xl animate-float-delay pointer-events-none hidden sm:block" />
-        <div className="absolute top-1/2 right-1/4 w-40 h-40 bg-white/10 rounded-full blur-2xl animate-float-slow pointer-events-none hidden sm:block" />
+        <div className="absolute top-20 right-10 w-96 h-96 bg-tjf-blue-light/20 rounded-full blur-3xl animate-float pointer-events-none hidden sm:block" />
 
         <div className="relative z-20 max-w-7xl mx-auto px-4 sm:px-6 lg:px-8 py-24 lg:py-20 w-full">
-          {/* Floating cards — inside container so they never exceed content width */}
-          <div className="absolute top-8 right-4 lg:right-8 hidden lg:block animate-float pointer-events-none">
-            <div className="glass-dark border border-white/20 rounded-2xl p-4 shadow-2xl w-52">
-              <div className="flex items-center gap-2 mb-2">
-                <div className="w-2 h-2 bg-green-400 rounded-full animate-pulse" />
-                <span className="text-white/80 text-xs font-medium">{lang === "en" ? "Latest" : "Terbaru"}</span>
-              </div>
-              <p className="text-white text-xs leading-tight font-medium">{publications[2]?.title}</p>
-              <span className="text-blue-300 text-[10px] mt-1 block">{publications[2]?.date}</span>
-            </div>
-          </div>
-          <div className="absolute bottom-8 right-4 lg:right-16 hidden lg:block animate-float-delay pointer-events-none">
-            <div className="glass-dark border border-white/20 rounded-2xl p-4 shadow-2xl w-44">
-              <div className="text-2xl mb-1">🌾</div>
-              <p className="text-white text-xs font-semibold">150+ {lang === "en" ? "Publications" : "Publikasi"}</p>
-              <p className="text-blue-300 text-[10px]">{lang === "en" ? "& Scientific Research" : "& Riset Ilmiah"}</p>
-            </div>
-          </div>
-
           <div className="max-w-2xl">
             <div className="hero-1">
               <span className="inline-flex items-center gap-2 bg-white/15 border border-white/25 text-white text-xs font-semibold px-3 py-1.5 rounded-full mb-6 backdrop-blur-sm">
@@ -261,7 +239,7 @@ export default function HomePage({ params }: Props) {
       </section>
 
       {/* ─── PUBLICATIONS ──────────────────────────────────────── */}
-      <section className="py-20 bg-gradient-to-b from-gray-50 to-white">
+      <section className="py-20 bg-tjf-blue-pale">
         <div className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
           <AnimatedSection className="flex items-end justify-between mb-10">
             <div>
@@ -276,40 +254,76 @@ export default function HomePage({ params }: Props) {
             </Link>
           </AnimatedSection>
 
-          <div className="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-4 gap-4">
-            {publications.slice(0, 4).map((pub, i) => (
-              <AnimatedSection key={pub.id} delay={i * 0.08}>
-                <Link
-                  href={lp(`/publication/${(pub as any).slug}`)}
-                  className="group bg-white border border-gray-100 rounded-2xl overflow-hidden hover:shadow-card-hover hover:border-tjf-blue/30 transition-all duration-300 hover:-translate-y-1 h-full flex flex-col"
-                >
-                  <div className="relative h-40 overflow-hidden">
-                    <Image
-                      src={pub.image}
-                      alt={pub.title}
-                      fill
-                      className="object-cover group-hover:scale-105 transition-transform duration-500"
-                      sizes="(max-width: 768px) 100vw, 25vw"
-                    />
-                    <div className="absolute inset-0 bg-gradient-to-t from-black/40 to-transparent" />
-                    <div className="absolute top-3 left-3">
-                      <span className={`text-[10px] font-bold px-2 py-0.5 rounded-full ${catColors[pub.category] ?? "bg-gray-100 text-gray-600"}`}>
-                        {pub.category}
-                      </span>
-                    </div>
+          <div className="grid grid-cols-1 lg:grid-cols-5 gap-4">
+            {/* Featured publication */}
+            <AnimatedSection className="lg:col-span-2" direction="left">
+              <Link
+                href={lp(`/publication/${(publications[0] as any).slug}`)}
+                className="group bg-white rounded-2xl overflow-hidden hover:shadow-card-hover hover:border-tjf-blue/30 border border-white transition-all duration-300 hover:-translate-y-2 h-full flex flex-col"
+              >
+                <div className="relative h-64 overflow-hidden">
+                  <Image
+                    src={publications[0].image}
+                    alt={publications[0].title}
+                    fill
+                    className="object-cover group-hover:scale-105 transition-transform duration-500"
+                    sizes="(max-width: 1024px) 100vw, 40vw"
+                  />
+                  <div className="absolute inset-0 bg-gradient-to-t from-black/50 to-transparent" />
+                  <div className="absolute top-3 left-3">
+                    <span className={`text-[10px] font-bold px-2 py-0.5 rounded-full ${catColors[publications[0].category] ?? "bg-gray-100 text-gray-600"}`}>
+                      {publications[0].category}
+                    </span>
                   </div>
-                  <div className="p-4 flex-1 flex flex-col">
-                    <span className="text-[10px] text-gray-400 mb-1.5">{pub.date}</span>
-                    <h4 className="font-bold text-gray-900 text-base leading-snug group-hover:text-tjf-blue transition-colors line-clamp-3 flex-1">
-                      {pub.title}
-                    </h4>
-                    <div className="flex items-center gap-1 mt-3 text-tjf-blue text-xs font-bold group-hover:gap-2 transition-all duration-200">
-                      {lang === "en" ? "Read More" : "Selengkapnya"} <ArrowRight className="w-3 h-3" />
-                    </div>
+                </div>
+                <div className="p-5 flex-1 flex flex-col">
+                  <span className="text-[10px] text-gray-400 mb-2">{publications[0].date}</span>
+                  <h4 className="font-black text-gray-900 text-lg leading-snug group-hover:text-tjf-blue transition-colors line-clamp-3 flex-1">
+                    {publications[0].title}
+                  </h4>
+                  <div className="flex items-center gap-1.5 mt-4 text-tjf-blue text-sm font-bold group-hover:gap-2.5 transition-all duration-200">
+                    {lang === "en" ? "Read More" : "Selengkapnya"} <ArrowRight className="w-4 h-4" />
                   </div>
-                </Link>
-              </AnimatedSection>
-            ))}
+                </div>
+              </Link>
+            </AnimatedSection>
+
+            {/* 3 smaller publications */}
+            <div className="lg:col-span-3 grid grid-cols-1 sm:grid-cols-3 gap-4">
+              {publications.slice(1, 4).map((pub, i) => (
+                <AnimatedSection key={pub.id} delay={(i + 1) * 0.08} direction="right">
+                  <Link
+                    href={lp(`/publication/${(pub as any).slug}`)}
+                    className="group bg-white rounded-2xl overflow-hidden hover:shadow-card-hover border border-white hover:border-tjf-blue/30 transition-all duration-300 hover:-translate-y-2 h-full flex flex-col"
+                  >
+                    <div className="relative h-40 overflow-hidden">
+                      <Image
+                        src={pub.image}
+                        alt={pub.title}
+                        fill
+                        className="object-cover group-hover:scale-105 transition-transform duration-500"
+                        sizes="(max-width: 640px) 100vw, 20vw"
+                      />
+                      <div className="absolute inset-0 bg-gradient-to-t from-black/40 to-transparent" />
+                      <div className="absolute top-3 left-3">
+                        <span className={`text-[10px] font-bold px-2 py-0.5 rounded-full ${catColors[pub.category] ?? "bg-gray-100 text-gray-600"}`}>
+                          {pub.category}
+                        </span>
+                      </div>
+                    </div>
+                    <div className="p-4 flex-1 flex flex-col">
+                      <span className="text-[10px] text-gray-400 mb-1.5">{pub.date}</span>
+                      <h4 className="font-bold text-gray-900 text-sm leading-snug group-hover:text-tjf-blue transition-colors line-clamp-3 flex-1">
+                        {pub.title}
+                      </h4>
+                      <div className="flex items-center gap-1 mt-3 text-tjf-blue text-xs font-bold group-hover:gap-2 transition-all duration-200">
+                        {lang === "en" ? "Read More" : "Selengkapnya"} <ArrowRight className="w-3 h-3" />
+                      </div>
+                    </div>
+                  </Link>
+                </AnimatedSection>
+              ))}
+            </div>
           </div>
         </div>
       </section>
@@ -418,40 +432,36 @@ export default function HomePage({ params }: Props) {
       </section>
 
       {/* ─── CTA ───────────────────────────────────────────────── */}
-      <section className="py-20 bg-white">
-        <div className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
-          <AnimatedSection>
-            <div className="relative bg-gradient-to-br from-tjf-blue-dark via-tjf-blue to-tjf-green rounded-3xl overflow-hidden p-12 text-center">
-              <div className="absolute inset-0 bg-dot-pattern opacity-30" />
-              <div className="absolute top-0 right-0 w-64 h-64 bg-white/10 rounded-full blur-3xl" />
-              <div className="absolute bottom-0 left-0 w-48 h-48 bg-white/10 rounded-full blur-3xl" />
-              <div className="relative">
-                <h2 className="text-4xl font-black text-white mb-3">
-                  {lang === "en" ? (
-                    <>Together Building <br /><span className="text-transparent bg-clip-text bg-gradient-to-r from-blue-200 to-green-300">the Future of Food</span></>
-                  ) : (
-                    <>Bersama Membangun <br /><span className="text-transparent bg-clip-text bg-gradient-to-r from-blue-200 to-green-300">Masa Depan Pangan</span></>
-                  )}
-                </h2>
-                <p className="text-blue-100 mb-8 text-lg max-w-md mx-auto">
-                  {lang === "en"
-                    ? "Join the network of researchers, farmers, and policymakers working together for Indonesia's food security."
-                    : "Bergabunglah dengan jaringan peneliti, petani, dan pembuat kebijakan yang bekerja bersama untuk ketahanan pangan Indonesia."}
-                </p>
-                <div className="flex flex-col sm:flex-row gap-3 justify-center max-w-sm mx-auto">
-                  <input
-                    type="email"
-                    placeholder={lang === "en" ? "Your email address" : "Alamat email Anda"}
-                    className="flex-1 px-4 py-3 rounded-xl text-gray-900 text-sm focus:outline-none focus:ring-2 focus:ring-white/50 bg-white/90"
-                  />
-                  <button className="bg-white text-tjf-blue font-bold px-6 py-3 rounded-xl hover:bg-blue-50 transition-colors whitespace-nowrap">
-                    {lang === "en" ? "Subscribe" : "Berlangganan"}
-                  </button>
-                </div>
-              </div>
+      <section className="relative bg-gradient-to-br from-tjf-blue-dark via-tjf-blue to-tjf-green overflow-hidden">
+        <div className="absolute inset-0 bg-dot-pattern opacity-30" />
+        <div className="absolute top-0 right-0 w-96 h-96 bg-white/10 rounded-full blur-3xl" />
+        <div className="absolute bottom-0 left-0 w-72 h-72 bg-white/10 rounded-full blur-3xl" />
+        <AnimatedSection>
+          <div className="relative max-w-3xl mx-auto px-4 sm:px-6 lg:px-8 py-24 text-center">
+            <h2 className="text-4xl sm:text-5xl font-black text-white mb-4">
+              {lang === "en" ? (
+                <>Together Building <br /><span className="text-transparent bg-clip-text bg-gradient-to-r from-blue-200 to-green-300">the Future of Food</span></>
+              ) : (
+                <>Bersama Membangun <br /><span className="text-transparent bg-clip-text bg-gradient-to-r from-blue-200 to-green-300">Masa Depan Pangan</span></>
+              )}
+            </h2>
+            <p className="text-blue-100 mb-10 text-lg max-w-md mx-auto leading-relaxed">
+              {lang === "en"
+                ? "Join the network of researchers, farmers, and policymakers working together for Indonesia's food security."
+                : "Bergabunglah dengan jaringan peneliti, petani, dan pembuat kebijakan yang bekerja bersama untuk ketahanan pangan Indonesia."}
+            </p>
+            <div className="flex flex-col sm:flex-row gap-3 justify-center max-w-sm mx-auto">
+              <input
+                type="email"
+                placeholder={lang === "en" ? "Your email address" : "Alamat email Anda"}
+                className="flex-1 px-4 py-3 rounded-xl text-gray-900 text-sm focus:outline-none focus:ring-2 focus:ring-white/50 bg-white/90"
+              />
+              <button className="bg-white text-tjf-blue font-bold px-6 py-3 rounded-xl hover:bg-blue-50 transition-colors whitespace-nowrap">
+                {lang === "en" ? "Subscribe" : "Berlangganan"}
+              </button>
             </div>
-          </AnimatedSection>
-        </div>
+          </div>
+        </AnimatedSection>
       </section>
     </div>
   );

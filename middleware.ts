@@ -12,7 +12,6 @@ export function middleware(request: NextRequest) {
     return;
   }
 
-  // /en or /en/... → redirect to clean URL (no prefix)
   if (pathname === "/en" || pathname.startsWith("/en/")) {
     const url = request.nextUrl.clone();
     url.pathname = pathname === "/en" ? "/" : pathname.slice(3);
