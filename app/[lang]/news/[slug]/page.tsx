@@ -79,7 +79,7 @@ export default function NewsDetailPage({ params }: Props) {
             </span>
           </div>
 
-          <h1 className="text-2xl sm:text-4xl font-black text-white leading-tight">
+          <h1 className="font-display text-2xl sm:text-4xl font-black text-white leading-tight">
             {article.title}
           </h1>
         </div>

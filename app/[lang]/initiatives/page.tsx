@@ -56,7 +56,7 @@ export default function InitiativesPage({ params }: Props) {
             <span className="inline-flex items-center gap-1.5 bg-white/15 border border-white/20 text-white text-xs font-bold px-3 py-1.5 rounded-full mb-5 uppercase tracking-wide">
               {tr.badge}
             </span>
-            <h1 className="text-5xl font-black mb-3">{tr.title}</h1>
+            <h1 className="font-display text-5xl font-black mb-3">{tr.title}</h1>
             <p className="text-green-100 text-lg max-w-xl leading-relaxed">
               {tr.subtitle}
             </p>
@@ -167,7 +167,7 @@ export default function InitiativesPage({ params }: Props) {
       <section className="py-16 bg-gradient-to-br from-tjf-blue-pale to-white">
         <AnimatedSection>
           <div className="max-w-3xl mx-auto px-4 text-center">
-            <h2 className="text-3xl font-black text-gray-900 mb-3">{tr.partnersTitle}</h2>
+            <h2 className="font-display text-3xl font-black text-gray-900 mb-3">{tr.partnersTitle}</h2>
             <p className="text-gray-500 mb-6">{tr.partnersSubtitle}</p>
             <Link
               href={lp("/contact")}

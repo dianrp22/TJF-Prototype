@@ -55,7 +55,7 @@ export default function ResearchAreaPage({ params }: Props) {
                 <FlaskConical className="w-3 h-3" />
                 {lang === "en" ? "Research Focus" : "Fokus Riset"}
               </span>
-              <h1 className="text-3xl sm:text-5xl font-black text-white leading-tight mb-3">
+              <h1 className="font-display text-3xl sm:text-5xl font-black text-white leading-tight mb-3">
                 {area.title}
               </h1>
               <p className="text-white/80 text-sm sm:text-base leading-relaxed max-w-2xl">

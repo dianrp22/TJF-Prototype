@@ -30,7 +30,7 @@ export default function ResearchPage({ params }: Props) {
               <FlaskConical className="w-3.5 h-3.5" />
               {tr.badge}
             </span>
-            <h1 className="text-5xl sm:text-6xl font-black mb-5 leading-tight">
+            <h1 className="font-display text-5xl sm:text-6xl font-black mb-5 leading-tight">
               {tr.title}
             </h1>
             <p className="text-blue-100 text-base leading-relaxed max-w-2xl">
@@ -54,7 +54,7 @@ export default function ResearchPage({ params }: Props) {
               {tr.focusTitle}
               <span className="w-5 h-px bg-tjf-blue" />
             </span>
-            <h2 className="text-3xl font-black text-gray-900 mt-1">{tr.focusSubtitle}</h2>
+            <h2 className="font-display text-3xl font-black text-gray-900 mt-1">{tr.focusSubtitle}</h2>
           </AnimatedSection>
 
           <div className="grid grid-cols-1 md:grid-cols-2 gap-6">
@@ -115,7 +115,7 @@ export default function ResearchPage({ params }: Props) {
         <div className="absolute inset-0 bg-dot-pattern opacity-20" />
         <AnimatedSection>
           <div className="relative max-w-3xl mx-auto px-4 text-center">
-            <h2 className="text-3xl font-black mb-3">
+            <h2 className="font-display text-3xl font-black mb-3">
               {lang === "en"
                 ? "Want to collaborate on research?"
                 : "Ingin berkolaborasi dalam penelitian?"}

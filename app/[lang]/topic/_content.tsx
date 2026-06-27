@@ -96,7 +96,7 @@ export default function TopicContent({ knowledgeTopics, newsItems, publications,
               <Compass className="w-3.5 h-3.5" />
               {tr.featureBadge}
             </span>
-            <h1 className="text-5xl sm:text-6xl font-black mb-4 leading-tight">{tr.title}</h1>
+            <h1 className="font-display text-5xl sm:text-6xl font-black mb-4 leading-tight">{tr.title}</h1>
             <p className="text-blue-100 text-lg max-w-2xl leading-relaxed mb-8">{tr.heroDesc}</p>
 
             {/* Search bar */}
@@ -277,7 +277,7 @@ export default function TopicContent({ knowledgeTopics, newsItems, publications,
                 <span className="w-5 h-px bg-tjf-blue" />
                 {tr.exploreByTopic}
               </span>
-              <h2 className="text-3xl font-black text-gray-900 mt-1">
+              <h2 className="font-display text-3xl font-black text-gray-900 mt-1">
                 {lang === "en" ? "Our Core Topics" : "Topik Utama Kami"}
               </h2>
               <p className="text-gray-500 mt-2 text-sm max-w-xl">

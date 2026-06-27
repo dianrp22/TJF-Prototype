@@ -78,7 +78,7 @@ export default function TopicDetailPage({ params }: Props) {
                   {lang === "en" ? "Topic" : "Topik"}
                 </span>
               </div>
-              <h1 className="text-4xl sm:text-5xl font-black text-white leading-tight mb-3">
+              <h1 className="font-display text-4xl sm:text-5xl font-black text-white leading-tight mb-3">
                 {topic.title}
               </h1>
               <p className="text-white/80 text-sm sm:text-base leading-relaxed mb-5">

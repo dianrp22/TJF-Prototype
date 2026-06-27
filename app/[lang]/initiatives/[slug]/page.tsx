@@ -60,7 +60,7 @@ export default function InitiativeDetailPage({ params }: Props) {
               <span className={`inline-block text-xs font-black px-3 py-1.5 rounded-full mb-4 text-white ${badgeColor}`}>
                 {initiative.icon} {lang === "en" ? "Initiative" : "Inisiatif"}
               </span>
-              <h1 className="text-3xl sm:text-5xl font-black text-white leading-tight mb-3">{initiative.title}</h1>
+              <h1 className="font-display text-3xl sm:text-5xl font-black text-white leading-tight mb-3">{initiative.title}</h1>
               <p className="text-white/80 text-sm sm:text-base leading-relaxed mb-5">{initiative.description}</p>
               <div className="flex items-center gap-3 flex-wrap">
                 {[

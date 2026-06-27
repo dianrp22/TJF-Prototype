@@ -29,7 +29,7 @@ export default function AboutPage({ params }: Props) {
             <span className="inline-flex items-center gap-1.5 bg-white/15 border border-white/20 text-xs font-bold px-3 py-1.5 rounded-full mb-5 uppercase tracking-wide">
               {tr.badge}
             </span>
-            <h1 className="text-5xl sm:text-6xl font-black mb-4 leading-tight">
+            <h1 className="font-display text-5xl sm:text-6xl font-black mb-4 leading-tight">
               Tay Juhana <br />
               <span className="text-transparent bg-clip-text bg-gradient-to-r from-blue-200 to-green-300">
                 Foundation
@@ -53,7 +53,7 @@ export default function AboutPage({ params }: Props) {
               <span className="inline-flex items-center gap-1.5 text-tjf-blue text-xs font-bold uppercase tracking-widest mb-3">
                 <span className="w-4 h-px bg-tjf-blue" /> {tr.mvBadge}
               </span>
-              <h2 className="text-4xl font-black text-gray-900 mb-8">{tr.whyTitle}</h2>
+              <h2 className="font-display text-4xl font-black text-gray-900 mb-8">{tr.whyTitle}</h2>
               <div className="space-y-6">
                 <div className="relative pl-6 border-l-4 border-tjf-blue">
                   <h3 className="font-black text-gray-900 mb-2">{tr.visionLabel}</h3>
@@ -98,7 +98,7 @@ export default function AboutPage({ params }: Props) {
             <span className="inline-flex items-center gap-1.5 text-tjf-green text-xs font-bold uppercase tracking-widest mb-2">
               <span className="w-4 h-px bg-tjf-green" /> {tr.valuesBadge} <span className="w-4 h-px bg-tjf-green" />
             </span>
-            <h2 className="text-4xl font-black text-gray-900 mt-1">{tr.valuesTitle}</h2>
+            <h2 className="font-display text-4xl font-black text-gray-900 mt-1">{tr.valuesTitle}</h2>
           </AnimatedSection>
           <div className="grid grid-cols-1 sm:grid-cols-2 lg:grid-cols-4 gap-5">
             {values.map((v, i) => (
@@ -123,7 +123,7 @@ export default function AboutPage({ params }: Props) {
             <span className="inline-flex items-center gap-1.5 text-tjf-blue text-xs font-bold uppercase tracking-widest mb-2">
               <span className="w-4 h-px bg-tjf-blue" /> {tr.teamBadge}
             </span>
-            <h2 className="text-4xl font-black text-gray-900 mt-1">{tr.teamTitle}</h2>
+            <h2 className="font-display text-4xl font-black text-gray-900 mt-1">{tr.teamTitle}</h2>
           </AnimatedSection>
           <div className="grid grid-cols-1 sm:grid-cols-2 lg:grid-cols-4 gap-5">
             {team.map((t, i) => (
@@ -161,7 +161,7 @@ export default function AboutPage({ params }: Props) {
         <div className="absolute inset-0 bg-dot-pattern opacity-20" />
         <AnimatedSection>
           <div className="relative max-w-2xl mx-auto px-4 text-center">
-            <h2 className="text-3xl font-black mb-3">{tr.ctaTitle}</h2>
+            <h2 className="font-display text-3xl font-black mb-3">{tr.ctaTitle}</h2>
             <p className="text-blue-100 mb-6">{tr.ctaSubtitle}</p>
             <div className="flex flex-col sm:flex-row gap-3 justify-center">
               <Link href={lp("/contact")} className="inline-flex items-center justify-center gap-2 bg-white text-tjf-blue font-bold px-6 py-3 rounded-xl hover:bg-blue-50 transition-colors">

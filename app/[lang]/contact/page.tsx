@@ -21,7 +21,7 @@ export default function ContactPage({ params }: Props) {
             <span className="inline-flex items-center gap-1.5 bg-white/15 border border-white/20 text-xs font-bold px-3 py-1.5 rounded-full mb-5 uppercase tracking-wide">
               {tr.badge}
             </span>
-            <h1 className="text-5xl font-black mb-2">{tr.title}</h1>
+            <h1 className="font-display text-5xl font-black mb-2">{tr.title}</h1>
             <p className="text-blue-100 text-lg max-w-md">{tr.subtitle}</p>
           </AnimatedSection>
         </div>

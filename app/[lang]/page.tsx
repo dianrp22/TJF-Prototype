@@ -58,7 +58,7 @@ export default function HomePage({ params }: Props) {
                 {tr.heroBadge}
               </span>
             </div>
-            <h1 className="hero-2 text-5xl sm:text-6xl lg:text-7xl font-black text-white leading-[1.05] tracking-tight mb-6">
+            <h1 className="hero-2 font-display text-5xl sm:text-6xl lg:text-7xl font-black text-white leading-[1.05] tracking-tight mb-6">
               {tr.heroLine1} <br />
               <span className="text-transparent bg-clip-text bg-gradient-to-r from-blue-200 to-green-300">
                 {tr.heroLine2}
@@ -132,7 +132,7 @@ export default function HomePage({ params }: Props) {
                 <span className="w-4 h-px bg-tjf-blue" />
                 {tr.khBadge}
               </span>
-              <h2 className="text-4xl font-black text-gray-900">{tr.khTitle}</h2>
+              <h2 className="font-display text-4xl font-black text-gray-900">{tr.khTitle}</h2>
               <p className="text-gray-500 mt-2 max-w-md text-base leading-relaxed">{tr.khSubtitle}</p>
             </div>
             <Link href={lp("/topic")} className="hidden sm:inline-flex items-center gap-1.5 text-tjf-blue text-sm font-bold hover:gap-3 transition-all duration-200">
@@ -180,7 +180,7 @@ export default function HomePage({ params }: Props) {
               {tr.initBadge}
               <span className="w-4 h-px bg-tjf-green" />
             </span>
-            <h2 className="text-4xl font-black text-gray-900 mt-1">{tr.initTitle}</h2>
+            <h2 className="font-display text-4xl font-black text-gray-900 mt-1">{tr.initTitle}</h2>
             <p className="text-gray-500 mt-2 max-w-md mx-auto text-base">{tr.initSubtitle}</p>
           </AnimatedSection>
 
@@ -247,7 +247,7 @@ export default function HomePage({ params }: Props) {
                 <span className="w-4 h-px bg-tjf-blue" />
                 {tr.pubBadge}
               </span>
-              <h2 className="text-4xl font-black text-gray-900">{tr.pubTitle}</h2>
+              <h2 className="font-display text-4xl font-black text-gray-900">{tr.pubTitle}</h2>
             </div>
             <Link href={lp("/publication")} className="hidden sm:inline-flex items-center gap-1.5 text-tjf-blue text-sm font-bold hover:gap-3 transition-all duration-200">
               {tr.pubViewAll} <ArrowRight className="w-4 h-4" />
@@ -337,7 +337,7 @@ export default function HomePage({ params }: Props) {
                 <span className="w-4 h-px bg-tjf-amber" />
                 {tr.newsBadge}
               </span>
-              <h2 className="text-4xl font-black text-gray-900">{tr.newsTitle}</h2>
+              <h2 className="font-display text-4xl font-black text-gray-900">{tr.newsTitle}</h2>
             </div>
             <Link href={lp("/news")} className="hidden sm:inline-flex items-center gap-1.5 text-tjf-blue text-sm font-bold hover:gap-3 transition-all duration-200">
               {tr.newsViewAll} <ArrowRight className="w-4 h-4" />
@@ -438,7 +438,7 @@ export default function HomePage({ params }: Props) {
         <div className="absolute bottom-0 left-0 w-72 h-72 bg-white/10 rounded-full blur-3xl" />
         <AnimatedSection>
           <div className="relative max-w-3xl mx-auto px-4 sm:px-6 lg:px-8 py-24 text-center">
-            <h2 className="text-4xl sm:text-5xl font-black text-white mb-4">
+            <h2 className="font-display text-4xl sm:text-5xl font-black text-white mb-4">
               {lang === "en" ? (
                 <>Together Building <br /><span className="text-transparent bg-clip-text bg-gradient-to-r from-blue-200 to-green-300">the Future of Food</span></>
               ) : (
